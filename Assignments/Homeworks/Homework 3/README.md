@@ -5,6 +5,7 @@ OR
 A)	cc filename.c
 B)	./a.out
 -->Screenshots of sample outputs are given in .pdf file.
+
 -->Programs Introduction:
 1)	checkPasswd.c checks password string length entered by user, if it is less than 10, then deduct points (5 points per missing character). If the total deduction is greater than 30 points, print out the deduction and message "The password is unsafe! Please reset."; otherwise, print out "The password is safe."
 2)	checkPasswd2.c checks password string and print above messages based on above deduction criteria, it deducts points if:
