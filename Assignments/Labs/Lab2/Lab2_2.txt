@@ -1,0 +1,50 @@
+   88  rm Lab2_P2
+   89  rmdir Lab2_P2/
+   90  rmdir test/
+   91  pwd
+   92  ls
+   93  mkdir Lab2_P2
+   94  cd Lab2_P2
+   95  ls
+   96  cp /home/bbello1/public/RealEstate.csv
+   97  cp /home/bbello1/public/RealEstate.csv .
+   98  ls
+   99  cat RealEstate.csv
+  100  head -3 RealEstate.csv
+  101  wc RealEstate.csv
+  102  cat -n RealEstate.csv
+  103  cat RealEstate.csv
+  104  cd ~
+  105  mkdir public
+  106  cp /home/aiftikhar2/Lab2_P2/RealEstate.csv /home/aiftikhar2/public/myRealEstate.csv
+  107  cd public
+  108  ls
+  109  wc myRealEstate.csv
+  110  pwd
+  111  ls
+  112  ls /home/aiftikhar2/public
+  113  pwd
+  114  mkdir Regular
+  115  mkdir Submission
+  116  cd Submission/
+  117  mkdir Lab2
+  118  mkdir Lab3
+  119  cd ..
+  120  ls
+  121  mv Regular Others
+  122  ls
+  123  cd Lab2
+  124  cd Submission
+  125  cd Lab2
+  126*
+  127  ls
+  128  cp -r /home/aiftikhar2/Lab2_P2 .
+  129  ls
+  130  cd ~
+  131  ls
+  132  rmdir Lab2_P2/
+  133  rmdir -r Lab2_P2/
+  134  rm -r Lab2_P2
+  135  ls
+  136  history
+  137  history 50
