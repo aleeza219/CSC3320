@@ -5,4 +5,4 @@ To compile and execute .c files in unix,
 (press enter)
 2) then type--> ./a.out
 
-Note: .docx or .pdf files contains respective questions which describe what each program is supposed to do (with screenshots of outputs).
+Note: .docx or .pdf files contains respective questions that describe what each program is supposed to do (with screenshots of outputs).
