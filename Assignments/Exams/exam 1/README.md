@@ -13,3 +13,7 @@ question 3:
 
 question 4: Run script ./phonebook.sh
 This program will guide user to perform functions of displaying, searching, adding, editing, or deleting contacts in phonebook. After user is done with above functions, he can also exit program.
+
+question 5: answers are given in pdf file.
+
+Note: Sceennshots of Output of every question are also given in pdf file.
