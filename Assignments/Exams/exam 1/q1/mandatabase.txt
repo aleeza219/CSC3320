@@ -1,0 +1,1339 @@
+LS(1)                            User Commands                           LS(1)
+
+
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about  the FILEs (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor --sort  is  speci‐
+       fied.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+              with -l, print the author of each file
+
+       -b, --escape
+              print C-style escapes for nongraphic characters
+
+       --block-size=SIZE
+              scale sizes by SIZE before printing them; e.g., '--block-size=M'
+              prints sizes in units of 1,048,576 bytes; see SIZE format below
+
+       -B, --ignore-backups
+              do not list implied entries ending with ~
+
+       -c     with -lt: sort by, and show, ctime (time of last modification of
+              file status information); with -l: show ctime and sort by  name;
+              otherwise: sort by ctime, newest first
+
+       -C     list entries by columns
+
+       --color[=WHEN]
+              colorize  the  output;  WHEN can be 'never', 'auto', or 'always'
+              (the default); more info below
+
+       -d, --directory
+              list directories themselves, not their contents
+
+       -D, --dired
+              generate output designed for Emacs' dired mode
+
+       -f     do not sort, enable -aU, disable -ls --color
+
+       -F, --classify
+              append indicator (one of */=>@|) to entries
+
+       --file-type
+              likewise, except do not append '*'
+
+       --format=WORD
+              across -x, commas -m, horizontal -x, long -l, single-column  -1,
+              verbose -l, vertical -C
+
+       --full-time
+              like -l --time-style=full-iso
+
+       -g     like -l, but do not list owner
+
+       --group-directories-first
+              group directories before files;
+
+              can   be  augmented  with  a  --sort  option,  but  any  use  of
+              --sort=none (-U) disables grouping
+
+       -G, --no-group
+              in a long listing, don't print group names
+
+       -h, --human-readable
+              with -l, print sizes in human readable format (e.g., 1K 234M 2G)
+
+       --si   likewise, but use powers of 1000 not 1024
+
+       -H, --dereference-command-line
+              follow symbolic links listed on the command line
+
+       --dereference-command-line-symlink-to-dir
+              follow each command line symbolic link
+
+              that points to a directory
+
+       --hide=PATTERN
+              do not list implied entries matching shell  PATTERN  (overridden
+              by -a or -A)
+
+       --indicator-style=WORD
+              append indicator with style WORD to entry names: none (default),
+              slash (-p), file-type (--file-type), classify (-F)
+
+       -i, --inode
+              print the index number of each file
+
+       -I, --ignore=PATTERN
+              do not list implied entries matching shell PATTERN
+
+       -k, --kibibytes
+              default to 1024-byte blocks for disk usage
+
+       -l     use a long listing format
+
+       -L, --dereference
+              when showing file information for a symbolic link, show informa‐
+              tion  for  the file the link references rather than for the link
+              itself
+
+       -m     fill width with a comma separated list of entries
+
+       -n, --numeric-uid-gid
+              like -l, but list numeric user and group IDs
+
+       -N, --literal
+              print raw entry names (don't treat e.g. control characters  spe‐
+              cially)
+
+       -o     like -l, but do not list group information
+
+       -p, --indicator-style=slash
+              append / indicator to directories
+
+       -q, --hide-control-chars
+              print ? instead of nongraphic characters
+
+       --show-control-chars
+              show nongraphic characters as-is (the default, unless program is
+              'ls' and output is a terminal)
+
+       -Q, --quote-name
+              enclose entry names in double quotes
+
+       --quoting-style=WORD
+              use quoting style WORD for entry names: literal, locale,  shell,
+              shell-always, c, escape
+
+       -r, --reverse
+              reverse order while sorting
+
+       -R, --recursive
+              list subdirectories recursively
+
+       -s, --size
+              print the allocated size of each file, in blocks
+
+       -S     sort by file size
+
+       --sort=WORD
+              sort  by  WORD instead of name: none (-U), size (-S), time (-t),
+              version (-v), extension (-X)
+
+       --time=WORD
+              with -l, show time as WORD instead of default modification time:
+              atime or access or use (-u) ctime or status (-c); also use spec‐
+              ified time as sort key if --sort=time
+
+       --time-style=STYLE
+              with -l, show times using style STYLE: full-iso, long-iso,  iso,
+              locale,  or  +FORMAT;  FORMAT  is interpreted like in 'date'; if
+              FORMAT  is  FORMAT1<newline>FORMAT2,  then  FORMAT1  applies  to
+              non-recent  files  and FORMAT2 to recent files; if STYLE is pre‐
+              fixed with 'posix-', STYLE takes effect only outside  the  POSIX
+              locale
+
+       -t     sort by modification time, newest first
+
+       -T, --tabsize=COLS
+              assume tab stops at each COLS instead of 8
+
+       -u     with  -lt:  sort by, and show, access time; with -l: show access
+              time and sort by name; otherwise: sort by access time
+
+       -U     do not sort; list entries in directory order
+
+       -v     natural sort of (version) numbers within text
+
+       -w, --width=COLS
+              assume screen width instead of current value
+
+       -x     list entries by lines instead of by columns
+
+       -X     sort alphabetically by entry extension
+
+       -1     list one file per line
+
+       SELinux options:
+
+       --lcontext
+              Display security context.   Enable -l. Lines  will  probably  be
+              too wide for most displays.
+
+       -Z, --context
+              Display  security context so it fits on most displays.  Displays
+              only mode, user, group, security context and file name.
+
+       --scontext
+              Display only security context and file name.
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       SIZE is an integer and optional unit (example:  10M  is  10*1024*1024).
+       Units  are K, M, G, T, P, E, Z, Y (powers of 1024) or KB, MB, ... (pow‐
+       ers of 1000).
+
+       Using color to distinguish file types is disabled both by  default  and
+       with  --color=never.  With --color=auto, ls emits color codes only when
+       standard output is connected to a terminal.  The LS_COLORS  environment
+       variable can change the settings.  Use the dircolors command to set it.
+
+   Exit status:
+       0      if OK,
+
+       1      if minor problems (e.g., cannot access subdirectory),
+
+       2      if serious trouble (e.g., cannot access command-line argument).
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report ls translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Richard M. Stallman and David MacKenzie.
+
+COPYRIGHT
+       Copyright © 2013 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       The full documentation for ls is maintained as a  Texinfo  manual.   If
+       the  info and ls programs are properly installed at your site, the com‐
+       mand
+
+              info coreutils 'ls invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                           LS(1)
+MV(1)                            User Commands                           MV(1)
+
+
+
+NAME
+       mv - move (rename) files
+
+SYNOPSIS
+       mv [OPTION]... [-T] SOURCE DEST
+       mv [OPTION]... SOURCE... DIRECTORY
+       mv [OPTION]... -t DIRECTORY SOURCE...
+
+DESCRIPTION
+       Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       --backup[=CONTROL]
+              make a backup of each existing destination file
+
+       -b     like --backup but does not accept an argument
+
+       -f, --force
+              do not prompt before overwriting
+
+       -i, --interactive
+              prompt before overwrite
+
+       -n, --no-clobber
+              do not overwrite an existing file
+
+       If you specify more than one of -i, -f, -n, only the  final  one  takes
+       effect.
+
+       --strip-trailing-slashes
+              remove any trailing slashes from each SOURCE argument
+
+       -S, --suffix=SUFFIX
+              override the usual backup suffix
+
+       -t, --target-directory=DIRECTORY
+              move all SOURCE arguments into DIRECTORY
+
+       -T, --no-target-directory
+              treat DEST as a normal file
+
+       -u, --update
+              move  only  when  the  SOURCE file is newer than the destination
+              file or when the destination file is missing
+
+       -v, --verbose
+              explain what is being done
+
+       -Z, --context
+              set SELinux security context of destination file to default type
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       The  backup  suffix  is  '~',  unless  set  with   --suffix   or   SIM‐
+       PLE_BACKUP_SUFFIX.   The version control method may be selected via the
+       --backup option or through the  VERSION_CONTROL  environment  variable.
+       Here are the values:
+
+       none, off
+              never make backups (even if --backup is given)
+
+       numbered, t
+              make numbered backups
+
+       existing, nil
+              numbered if numbered backups exist, simple otherwise
+
+       simple, never
+              always make simple backups
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report mv translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Mike Parker, David MacKenzie, and Jim Meyering.
+
+COPYRIGHT
+       Copyright © 2013 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       rename(2)
+
+       The full documentation for mv is maintained as a  Texinfo  manual.   If
+       the  info and mv programs are properly installed at your site, the com‐
+       mand
+
+              info coreutils 'mv invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                           MV(1)
+SED(1)                           User Commands                          SED(1)
+
+
+
+NAME
+       sed - stream editor for filtering and transforming text
+
+SYNOPSIS
+       sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+DESCRIPTION
+       Sed  is a stream editor.  A stream editor is used to perform basic text
+       transformations on an input stream (a file or input from  a  pipeline).
+       While  in  some  ways similar to an editor which permits scripted edits
+       (such as ed), sed works by making only one pass over the input(s),  and
+       is consequently more efficient.  But it is sed's ability to filter text
+       in a pipeline which particularly distinguishes it from other  types  of
+       editors.
+
+       -n, --quiet, --silent
+
+              suppress automatic printing of pattern space
+
+       -e script, --expression=script
+
+              add the script to the commands to be executed
+
+       -f script-file, --file=script-file
+
+              add the contents of script-file to the commands to be executed
+
+       --follow-symlinks
+
+              follow symlinks when processing in place
+
+       -i[SUFFIX], --in-place[=SUFFIX]
+
+              edit files in place (makes backup if SUFFIX supplied)
+
+       -c, --copy
+
+              use copy instead of rename when shuffling files in -i mode
+
+       -b, --binary
+
+              does  nothing;  for  compatibility with WIN32/CYGWIN/MSDOS/EMX (
+              open files in binary mode (CR+LFs are not treated specially))
+
+       -l N, --line-length=N
+
+              specify the desired line-wrap length for the `l' command
+
+       --posix
+
+              disable all GNU extensions.
+
+       -r, --regexp-extended
+
+              use extended regular expressions in the script.
+
+       -s, --separate
+
+              consider files as separate rather than as  a  single  continuous
+              long stream.
+
+       -u, --unbuffered
+
+              load  minimal amounts of data from the input files and flush the
+              output buffers more often
+
+       -z, --null-data
+
+              separate lines by NUL characters
+
+       --help
+
+              display this help and exit
+
+       --version
+
+              output version information and exit
+
+       If no -e, --expression, -f, or --file option is given, then  the  first
+       non-option  argument  is  taken  as  the  sed script to interpret.  All
+       remaining arguments are names of input files; if  no  input  files  are
+       specified, then the standard input is read.
+
+       GNU  sed  home  page: <http://www.gnu.org/software/sed/>.  General help
+       using GNU software: <http://www.gnu.org/gethelp/>.  E-mail bug  reports
+       to:  <bug-sed@gnu.org>.   Be sure to include the word ``sed'' somewhere
+       in the ``Subject:'' field.
+
+COMMAND SYNOPSIS
+       This is just a brief synopsis of sed commands to serve as a reminder to
+       those  who  already  know sed; other documentation (such as the texinfo
+       document) must be consulted for fuller descriptions.
+
+   Zero-address ``commands''
+       : label
+              Label for b and t commands.
+
+       #comment
+              The comment extends until the next newline (or the end of  a  -e
+              script fragment).
+
+       }      The closing bracket of a { } block.
+
+   Zero- or One- address commands
+       =      Print the current line number.
+
+       a \
+
+       text   Append text, which has each embedded newline preceded by a back‐
+              slash.
+
+       i \
+
+       text   Insert text, which has each embedded newline preceded by a back‐
+              slash.
+
+       q [exit-code]
+              Immediately  quit  the  sed  script  without processing any more
+              input, except that if auto-print is  not  disabled  the  current
+              pattern  space will be printed.  The exit code argument is a GNU
+              extension.
+
+       Q [exit-code]
+              Immediately quit the sed  script  without  processing  any  more
+              input.  This is a GNU extension.
+
+       r filename
+              Append text read from filename.
+
+       R filename
+              Append  a  line read from filename.  Each invocation of the com‐
+              mand reads a line from the file.  This is a GNU extension.
+
+   Commands which accept address ranges
+       {      Begin a block of commands (end with a }).
+
+       b label
+              Branch to label; if label is omitted, branch to end of script.
+
+       c \
+
+       text   Replace the selected lines with text, which  has  each  embedded
+              newline preceded by a backslash.
+
+       d      Delete pattern space.  Start next cycle.
+
+       D      If  pattern  space contains no newline, start a normal new cycle
+              as if the d command was issued.  Otherwise, delete text  in  the
+              pattern  space  up  to the first newline, and restart cycle with
+              the resultant pattern space,  without  reading  a  new  line  of
+              input.
+
+       h H    Copy/append pattern space to hold space.
+
+       g G    Copy/append hold space to pattern space.
+
+       l      List out the current line in a ``visually unambiguous'' form.
+
+       l width
+              List  out  the  current line in a ``visually unambiguous'' form,
+              breaking it at width characters.  This is a GNU extension.
+
+       n N    Read/append the next line of input into the pattern space.
+
+       p      Print the current pattern space.
+
+       P      Print up to the first embedded newline of  the  current  pattern
+              space.
+
+       s/regexp/replacement/
+              Attempt  to match regexp against the pattern space.  If success‐
+              ful,  replace  that  portion  matched  with  replacement.    The
+              replacement may contain the special character & to refer to that
+              portion of the pattern space  which  matched,  and  the  special
+              escapes  \1  through  \9  to refer to the corresponding matching
+              sub-expressions in the regexp.
+
+       t label
+              If a s/// has done a  successful  substitution  since  the  last
+              input  line  was  read  and  since the last t or T command, then
+              branch to label; if label is omitted, branch to end of script.
+
+       T label
+              If no s/// has done a successful  substitution  since  the  last
+              input  line  was  read  and  since the last t or T command, then
+              branch to label; if label is omitted, branch to end  of  script.
+              This is a GNU extension.
+
+       w filename
+              Write the current pattern space to filename.
+
+       W filename
+              Write  the  first line of the current pattern space to filename.
+              This is a GNU extension.
+
+       x      Exchange the contents of the hold and pattern spaces.
+
+       y/source/dest/
+              Transliterate the characters in the pattern space  which  appear
+              in source to the corresponding character in dest.
+
+Addresses
+       Sed  commands can be given with no addresses, in which case the command
+       will be executed for all input lines; with one address, in  which  case
+       the  command  will  only  be  executed for input lines which match that
+       address; or with two addresses, in which case the command will be  exe‐
+       cuted  for  all  input  lines  which match the inclusive range of lines
+       starting from the first address and continuing to the  second  address.
+       Three  things  to  note about address ranges: the syntax is addr1,addr2
+       (i.e., the addresses are separated by a comma); the  line  which  addr1
+       matched will always be accepted, even if addr2 selects an earlier line;
+       and if addr2 is a regexp, it will not be tested against the  line  that
+       addr1 matched.
+
+       After  the address (or address-range), and before the command, a !  may
+       be inserted, which specifies that the command shall only be executed if
+       the address (or address-range) does not match.
+
+       The following address types are supported:
+
+       number Match  only  the specified line number (which increments cumula‐
+              tively across files, unless the -s option is  specified  on  the
+              command line).
+
+       first~step
+              Match every step'th line starting with line first.  For example,
+              ``sed -n 1~2p'' will print all the  odd-numbered  lines  in  the
+              input  stream,  and the address 2~5 will match every fifth line,
+              starting with the second.  first can be zero; in this case,  sed
+              operates as if it were equal to step.  (This is an extension.)
+
+       $      Match the last line.
+
+       /regexp/
+              Match lines matching the regular expression regexp.
+
+       \cregexpc
+              Match  lines  matching the regular expression regexp.  The c may
+              be any character.
+
+       GNU sed also supports some special 2-address forms:
+
+       0,addr2
+              Start out in "matched  first  address"  state,  until  addr2  is
+              found.  This is similar to 1,addr2, except that if addr2 matches
+              the very first line of input the 0,addr2 form will be at the end
+              of  its  range,  whereas  the  1,addr2 form will still be at the
+              beginning of its range.  This works only when addr2 is a regular
+              expression.
+
+       addr1,+N
+              Will match addr1 and the N lines following addr1.
+
+       addr1,~N
+              Will  match  addr1  and the lines following addr1 until the next
+              line whose input line number is a multiple of N.
+
+REGULAR EXPRESSIONS
+       POSIX.2 BREs should be supported, but they aren't completely because of
+       performance  problems.  The \n sequence in a regular expression matches
+       the newline character, and similarly for \a, \t, and other sequences.
+
+BUGS
+       E-mail bug reports to bug-sed@gnu.org.  Also, please include the output
+       of ``sed --version'' in the body of your report if at all possible.
+
+AUTHOR
+       Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU
+       sed home page: <http://www.gnu.org/software/sed/>.  General help  using
+       GNU  software:  <http://www.gnu.org/gethelp/>.   E-mail bug reports to:
+       <bug-sed@gnu.org>.  Be sure to include the word  ``sed''  somewhere  in
+       the ``Subject:'' field.
+
+COPYRIGHT
+       Copyright  ©  2012  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       awk(1),  ed(1),  grep(1),  tr(1),  perlre(1),  sed.info, any of various
+       books on sed, the sed FAQ (http://sed.sf.net/grabbag/tutorials/sed‐
+       faq.txt), http://sed.sf.net/grabbag/.
+
+       The full documentation for sed is maintained as a Texinfo manual.  If
+       the info and sed programs are properly installed at your site, the com‐
+       mand
+
+              info sed
+
+       should give you access to the complete manual.
+
+
+
+sed 4.2.2                       September 2020                          SED(1)
+PWD(1)                           User Commands                          PWD(1)
+
+
+
+NAME
+       pwd - print name of current/working directory
+
+SYNOPSIS
+       pwd [OPTION]...
+
+DESCRIPTION
+       Print the full filename of the current working directory.
+
+       -L, --logical
+              use PWD from environment, even if it contains symlinks
+
+       -P, --physical
+              avoid all symlinks
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       NOTE:  your shell may have its own version of pwd, which usually super‐
+       sedes the version described here.  Please refer to your  shell's  docu‐
+       mentation for details about the options it supports.
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report pwd translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Jim Meyering.
+
+COPYRIGHT
+       Copyright © 2013 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       getcwd(3)
+
+       The full documentation for pwd is maintained as a Texinfo  manual.   If
+       the info and pwd programs are properly installed at your site, the com‐
+       mand
+
+              info coreutils 'pwd invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                          PWD(1)
+RM(1)                            User Commands                           RM(1)
+
+
+
+NAME
+       rm - remove files or directories
+
+SYNOPSIS
+       rm [OPTION]... FILE...
+
+DESCRIPTION
+       This  manual  page  documents  the  GNU version of rm.  rm removes each
+       specified file.  By default, it does not remove directories.
+
+       If the -I or --interactive=once option is given,  and  there  are  more
+       than  three  files  or  the  -r,  -R, or --recursive are given, then rm
+       prompts the user for whether to proceed with the entire operation.   If
+       the response is not affirmative, the entire command is aborted.
+
+       Otherwise,  if  a file is unwritable, standard input is a terminal, and
+       the -f or --force  option  is  not  given,  or  the  -i  or  --interac‐
+       tive=always  option is given, rm prompts the user for whether to remove
+       the file.  If the response is not affirmative, the file is skipped.
+
+OPTIONS
+       Remove (unlink) the FILE(s).
+
+       -f, --force
+              ignore nonexistent files and arguments, never prompt
+
+       -i     prompt before every removal
+
+       -I     prompt once before removing  more  than  three  files,  or  when
+              removing recursively; less intrusive than -i, while still giving
+              protection against most mistakes
+
+       --interactive[=WHEN]
+              prompt according to WHEN: never,  once  (-I),  or  always  (-i);
+              without WHEN, prompt always
+
+       --one-file-system
+              when  removing  a hierarchy recursively, skip any directory that
+              is on a file system different from  that  of  the  corresponding
+              command line argument
+
+       --no-preserve-root
+              do not treat '/' specially
+
+       --preserve-root
+              do not remove '/' (default)
+
+       -r, -R, --recursive
+              remove directories and their contents recursively
+
+       -d, --dir
+              remove empty directories
+
+       -v, --verbose
+              explain what is being done
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       By default, rm does not remove directories.  Use the --recursive (-r or
+       -R) option to remove each listed directory, too, along with all of  its
+       contents.
+
+       To  remove a file whose name starts with a '-', for example '-foo', use
+       one of these commands:
+
+              rm -- -foo
+
+              rm ./-foo
+
+       Note that if you use rm to remove a  file,  it  might  be  possible  to
+       recover  some  of its contents, given sufficient expertise and/or time.
+       For greater assurance that the contents are truly  unrecoverable,  con‐
+       sider using shred.
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report rm translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Paul Rubin, David MacKenzie, Richard M.  Stallman,  and  Jim
+       Meyering.
+
+COPYRIGHT
+       Copyright  ©  2013  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       unlink(1), unlink(2), chattr(1), shred(1)
+
+       The  full  documentation  for rm is maintained as a Texinfo manual.  If
+       the info and rm programs are properly installed at your site, the  com‐
+       mand
+
+              info coreutils 'rm invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                           RM(1)
+CP(1)                            User Commands                           CP(1)
+
+
+
+NAME
+       cp - copy files and directories
+
+SYNOPSIS
+       cp [OPTION]... [-T] SOURCE DEST
+       cp [OPTION]... SOURCE... DIRECTORY
+       cp [OPTION]... -t DIRECTORY SOURCE...
+
+DESCRIPTION
+       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       -a, --archive
+              same as -dR --preserve=all
+
+       --attributes-only
+              don't copy the file data, just the attributes
+
+       --backup[=CONTROL]
+              make a backup of each existing destination file
+
+       -b     like --backup but does not accept an argument
+
+       --copy-contents
+              copy contents of special files when recursive
+
+       -d     same as --no-dereference --preserve=links
+
+       -f, --force
+              if an existing destination file cannot be opened, remove it  and
+              try  again  (this  option  is ignored when the -n option is also
+              used)
+
+       -i, --interactive
+              prompt before overwrite (overrides a previous -n option)
+
+       -H     follow command-line symbolic links in SOURCE
+
+       -l, --link
+              hard link files instead of copying
+
+       -L, --dereference
+              always follow symbolic links in SOURCE
+
+       -n, --no-clobber
+              do not overwrite an  existing  file  (overrides  a  previous  -i
+              option)
+
+       -P, --no-dereference
+              never follow symbolic links in SOURCE
+
+       -p     same as --preserve=mode,ownership,timestamps
+
+       --preserve[=ATTR_LIST]
+              preserve the specified attributes (default: mode,ownership,time‐
+              stamps), if  possible  additional  attributes:  context,  links,
+              xattr, all
+
+       -c     deprecated, same as --preserve=context
+
+       --no-preserve=ATTR_LIST
+              don't preserve the specified attributes
+
+       --parents
+              use full source file name under DIRECTORY
+
+       -R, -r, --recursive
+              copy directories recursively
+
+       --reflink[=WHEN]
+              control clone/CoW copies. See below
+
+       --remove-destination
+              remove  each existing destination file before attempting to open
+              it (contrast with --force)
+
+       --sparse=WHEN
+              control creation of sparse files. See below
+
+       --strip-trailing-slashes
+              remove any trailing slashes from each SOURCE argument
+
+       -s, --symbolic-link
+              make symbolic links instead of copying
+
+       -S, --suffix=SUFFIX
+              override the usual backup suffix
+
+       -t, --target-directory=DIRECTORY
+              copy all SOURCE arguments into DIRECTORY
+
+       -T, --no-target-directory
+              treat DEST as a normal file
+
+       -u, --update
+              copy only when the SOURCE file is  newer  than  the  destination
+              file or when the destination file is missing
+
+       -v, --verbose
+              explain what is being done
+
+       -x, --one-file-system
+              stay on this file system
+
+       -Z     set SELinux security context of destination file to default type
+
+       --context[=CTX]
+              like  -Z,  or  if CTX is specified then set the SELinux or SMACK
+              security context to CTX
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       By default, sparse SOURCE files are detected by a crude  heuristic  and
+       the corresponding DEST file is made sparse as well.  That is the behav‐
+       ior selected by --sparse=auto.  Specify  --sparse=always  to  create  a
+       sparse  DEST  file  whenever  the  SOURCE  file  contains a long enough
+       sequence of zero bytes.  Use  --sparse=never  to  inhibit  creation  of
+       sparse files.
+
+       When --reflink[=always] is specified, perform a lightweight copy, where
+       the data blocks are copied only when modified.  If this is not possible
+       the copy fails, or if --reflink=auto is specified, fall back to a stan‐
+       dard copy.
+
+       The  backup  suffix  is  '~',  unless  set  with   --suffix   or   SIM‐
+       PLE_BACKUP_SUFFIX.   The version control method may be selected via the
+       --backup option or through the  VERSION_CONTROL  environment  variable.
+       Here are the values:
+
+       none, off
+              never make backups (even if --backup is given)
+
+       numbered, t
+              make numbered backups
+
+       existing, nil
+              numbered if numbered backups exist, simple otherwise
+
+       simple, never
+              always make simple backups
+
+       As  a  special  case,  cp  makes  a backup of SOURCE when the force and
+       backup options are given and SOURCE and DEST are the same name  for  an
+       existing, regular file.
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report cp translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Torbjorn Granlund, David MacKenzie, and Jim Meyering.
+
+COPYRIGHT
+       Copyright © 2013 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       The full documentation for cp is maintained as a  Texinfo  manual.   If
+       the  info and cp programs are properly installed at your site, the com‐
+       mand
+
+              info coreutils 'cp invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                           CP(1)
+MKDIR(1)                         User Commands                        MKDIR(1)
+
+
+
+NAME
+       mkdir - make directories
+
+SYNOPSIS
+       mkdir [OPTION]... DIRECTORY...
+
+DESCRIPTION
+       Create the DIRECTORY(ies), if they do not already exist.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       -m, --mode=MODE
+              set file mode (as in chmod), not a=rwx - umask
+
+       -p, --parents
+              no error if existing, make parent directories as needed
+
+       -v, --verbose
+              print a message for each created directory
+
+       -Z     set SELinux security context of each created  directory  to  the
+              default type
+
+       --context[=CTX]
+              like  -Z,  or  if CTX is specified then set the SELinux or SMACK
+              security context to CTX
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report mkdir translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by David MacKenzie.
+
+COPYRIGHT
+       Copyright  ©  2013  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       mkdir(2)
+
+       The full documentation for mkdir is maintained as a Texinfo manual.  If
+       the info and mkdir programs are properly installed at  your  site,  the
+       command
+
+              info coreutils 'mkdir invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                        MKDIR(1)
+RMDIR(1)                         User Commands                        RMDIR(1)
+
+
+
+NAME
+       rmdir - remove empty directories
+
+SYNOPSIS
+       rmdir [OPTION]... DIRECTORY...
+
+DESCRIPTION
+       Remove the DIRECTORY(ies), if they are empty.
+
+       --ignore-fail-on-non-empty
+
+              ignore each failure that is solely because a directory
+
+              is non-empty
+
+       -p, --parents
+              remove  DIRECTORY  and  its ancestors; e.g., 'rmdir -p a/b/c' is
+              similar to 'rmdir a/b/c a/b a'
+
+       -v, --verbose
+              output a diagnostic for every directory processed
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report rmdir translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by David MacKenzie.
+
+COPYRIGHT
+       Copyright  ©  2013  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       rmdir(2)
+
+       The full documentation for rmdir is maintained as a Texinfo manual.  If
+       the info and rmdir programs are properly installed at  your  site,  the
+       command
+
+              info coreutils 'rmdir invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                        RMDIR(1)
+TOUCH(1)                         User Commands                        TOUCH(1)
+
+
+
+NAME
+       touch - change file timestamps
+
+SYNOPSIS
+       touch [OPTION]... FILE...
+
+DESCRIPTION
+       Update  the  access  and modification times of each FILE to the current
+       time.
+
+       A FILE argument that does not exist is created empty, unless -c  or  -h
+       is supplied.
+
+       A  FILE  argument  string of - is handled specially and causes touch to
+       change the times of the file associated with standard output.
+
+       Mandatory arguments to long options are  mandatory  for  short  options
+       too.
+
+       -a     change only the access time
+
+       -c, --no-create
+              do not create any files
+
+       -d, --date=STRING
+              parse STRING and use it instead of current time
+
+       -f     (ignored)
+
+       -h, --no-dereference
+              affect each symbolic link instead of any referenced file (useful
+              only on systems that can change the timestamps of a symlink)
+
+       -m     change only the modification time
+
+       -r, --reference=FILE
+              use this file's times instead of current time
+
+       -t STAMP
+              use [[CC]YY]MMDDhhmm[.ss] instead of current time
+
+       --time=WORD
+              change the specified time: WORD is access, atime, or use: equiv‐
+              alent to -a WORD is modify or mtime: equivalent to -m
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       Note that the -d and -t options accept different time-date formats.
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report touch translation bugs to <http://translationproject.org/team/>
+
+DATE STRING
+       The --date=STRING is a mostly free format human  readable  date  string
+       such  as  "Sun, 29 Feb 2004 16:21:42 -0800" or "2004-02-29 16:21:42" or
+       even "next Thursday".  A date string may contain items indicating  cal‐
+       endar  date,  time of day, time zone, day of week, relative time, rela‐
+       tive date, and numbers.  An empty string indicates the beginning of the
+       day.   The date string format is more complex than is easily documented
+       here but is fully described in the info documentation.
+
+AUTHOR
+       Written by Paul Rubin, Arnold Robbins, Jim  Kingdon,  David  MacKenzie,
+       and Randy Smith.
+
+COPYRIGHT
+       Copyright  ©  2013  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       The full documentation for touch is maintained as a Texinfo manual.  If
+       the info and touch programs are properly installed at  your  site,  the
+       command
+
+              info coreutils 'touch invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                        TOUCH(1)
+TR(1)                            User Commands                           TR(1)
+
+
+
+NAME
+       tr - translate or delete characters
+
+SYNOPSIS
+       tr [OPTION]... SET1 [SET2]
+
+DESCRIPTION
+       Translate, squeeze, and/or delete characters from standard input, writ‐
+       ing to standard output.
+
+       -c, -C, --complement
+              use the complement of SET1
+
+       -d, --delete
+              delete characters in SET1, do not translate
+
+       -s, --squeeze-repeats
+              replace each input sequence of  a  repeated  character  that  is
+              listed in SET1 with a single occurrence of that character
+
+       -t, --truncate-set1
+              first truncate SET1 to length of SET2
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       SETs  are  specified  as  strings  of characters.  Most represent them‐
+       selves.  Interpreted sequences are:
+
+       \NNN   character with octal value NNN (1 to 3 octal digits)
+
+       \\     backslash
+
+       \a     audible BEL
+
+       \b     backspace
+
+       \f     form feed
+
+       \n     new line
+
+       \r     return
+
+       \t     horizontal tab
+
+       \v     vertical tab
+
+       CHAR1-CHAR2
+              all characters from CHAR1 to CHAR2 in ascending order
+
+       [CHAR*]
+              in SET2, copies of CHAR until length of SET1
+
+       [CHAR*REPEAT]
+              REPEAT copies of CHAR, REPEAT octal if starting with 0
+
+       [:alnum:]
+              all letters and digits
+
+       [:alpha:]
+              all letters
+
+       [:blank:]
+              all horizontal whitespace
+
+       [:cntrl:]
+              all control characters
+
+       [:digit:]
+              all digits
+
+       [:graph:]
+              all printable characters, not including space
+
+       [:lower:]
+              all lower case letters
+
+       [:print:]
+              all printable characters, including space
+
+       [:punct:]
+              all punctuation characters
+
+       [:space:]
+              all horizontal or vertical whitespace
+
+       [:upper:]
+              all upper case letters
+
+       [:xdigit:]
+              all hexadecimal digits
+
+       [=CHAR=]
+              all characters which are equivalent to CHAR
+
+       Translation occurs if -d is not given and both SET1  and  SET2  appear.
+       -t  may  be  used only when translating.  SET2 is extended to length of
+       SET1 by repeating its last character as necessary.   Excess  characters
+       of  SET2  are  ignored.  Only [:lower:] and [:upper:] are guaranteed to
+       expand in ascending order; used in SET2  while  translating,  they  may
+       only  be used in pairs to specify case conversion.  -s uses SET1 if not
+       translating nor deleting; else squeezing uses  SET2  and  occurs  after
+       translation or deletion.
+
+       GNU  coreutils  online  help:  <http://www.gnu.org/software/coreutils/>
+       Report tr translation bugs to <http://translationproject.org/team/>
+
+AUTHOR
+       Written by Jim Meyering.
+
+COPYRIGHT
+       Copyright © 2013 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       The full documentation for tr is maintained as a  Texinfo  manual.   If
+       the  info and tr programs are properly installed at your site, the com‐
+       mand
+
+              info coreutils 'tr invocation'
+
+       should give you access to the complete manual.
+
+
+
+GNU coreutils 8.22               November 2020                           TR(1)
